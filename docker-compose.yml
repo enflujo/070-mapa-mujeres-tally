@@ -57,6 +57,8 @@ services:
       - '${CMS_PUERTO}:8055'
     # Los volúmenes ayudan a mapear carpetas del contenedor con copias locales y de esta manera persisten en cada inicio del contenedor.
     volumes:
+      # Copia local de los uploads queda en /cms/uploads
+      - ./uploads:/directus/uploads
       # Copia local de las extensiones queda en /cms/extensions
       - ./extensions:/directus/extensions
     # Nombre de la red de Docker que se encarga de orquestar la comunicación entre las aplicaciones / contenedores separados.
