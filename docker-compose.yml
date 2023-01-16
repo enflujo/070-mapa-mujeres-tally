@@ -16,6 +16,7 @@ services:
     # Persistencia de datos ya que cuando se apaga el contenedor se pierde.
     # La copia local que se mapea con el contenedor está en /cms/data.
     volumes:
+      - ./dump:/docker-entrypoint-initdb.d
       - ./datos:/var/lib/postgresql/data
     # Nombre de la red de Docker que se encarga de orquestar la comunicación entre las aplicaciones / contenedores separados.
     networks:
